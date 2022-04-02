@@ -46,7 +46,8 @@ Post request to http://localhost:8080/api/v1/person
 }
     
 ```
-to see how much discount for each one of them
+### Step 2
+To see how much discount for each one of them
 Get request to http://localhost:8080/api/v1/person
 the results will be 
 ```
