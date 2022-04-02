@@ -37,6 +37,7 @@ public class PersonDB implements PersonDeo {
                     if (indexOfPersonToUpdate>=0){
                         DB.set(indexOfPersonToUpdate,new Person(id,update.getName(), person.getTotal(),true));
                         return person.getTotal();
+
                     }
                     return 0;
                 })
