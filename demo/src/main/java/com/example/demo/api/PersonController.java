@@ -19,5 +19,8 @@ public class PersonController {
     public void addPerson(@RequestBody Person person){
         personService.addPerson(person);
     }
-
+    @GetMapping
+    public List<Person>getAllPeople(){
+        return personService.getAllPeople();
+    }
 }
