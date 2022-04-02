@@ -5,7 +5,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
+
 @Repository("Dao")
 public class PersonDB implements PersonDeo {
 
@@ -19,5 +21,25 @@ public class PersonDB implements PersonDeo {
     @Override
    public List<Person>selectAllPeople(){
         return DB;
+    }
+
+    @Override
+    public Optional<Person> selectPersonById(UUID id) {
+        return DB.stream().filter(person -> person.getId().equals(id))
+                .findFirst();
+    }
+
+    @Override
+    public int updatePersonById(UUID id, Person update) {
+        return selectPersonById(id)
+                .map(person -> {
+                    int indexOfPersonToUpdate =DB.indexOf(person);
+                    if (indexOfPersonToUpdate>=0){
+                        DB.set(indexOfPersonToUpdate,new Person(id,update.getName(), person.getTotal(),true));
+                        return person.getTotal();
+                    }
+                    return 0;
+                })
+                .orElse(0);
     }
 }
