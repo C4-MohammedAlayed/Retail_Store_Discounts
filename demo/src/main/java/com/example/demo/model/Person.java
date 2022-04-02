@@ -10,12 +10,14 @@ public class Person {
     private int total;
     private boolean isEmployee;
 
-    public Person(@JsonProperty("id") UUID id,@JsonProperty("name") String name,@JsonProperty("total") int total, @JsonProperty("employee")boolean employee) {
+    public Person(@JsonProperty("id") UUID id,@JsonProperty("name") String name,@JsonProperty("total") int total, @JsonProperty("employee")boolean isEmployee) {
         this.id = id;
         this.name = name;
         this.total = total;
         this.isEmployee = isEmployee;
     }
+
+
 
     public UUID getId() {
         return id;
@@ -34,11 +36,20 @@ public class Person {
     }
 
     public int getTotal() {
-        return total;
+        return this.total;
+
     }
 
-    public void setTotal(int total) {
-        this.total = total;
+    public int setTotal() {
+       if(isEmployee){int h =total/100;
+           int discount = (int) (total*0.3+((total/100) *5));
+          return this.total = (int) (total-discount);
+
+       }else {
+           int discount = (int) (total*0.1+((total/100) *5));
+         return   this.total = (int) (total-discount);
+       }
+
     }
 
     public boolean isEmployee() {
