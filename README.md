@@ -30,7 +30,7 @@ Finding the net payable amount:
 ## 🎈 usage <a name = "usage"></a>
 ### Step 1
 
-we will create 2 person one of them is employee 
+We will create 2 person one of them is employee 
 Post request to http://localhost:8080/api/v1/person
 ```
 { 
