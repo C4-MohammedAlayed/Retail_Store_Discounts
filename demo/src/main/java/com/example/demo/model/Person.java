@@ -9,12 +9,14 @@ public class Person {
     private String name;
     private int total;
     private boolean isEmployee;
+    private String discount ;
 
-    public Person(@JsonProperty("id") UUID id,@JsonProperty("name") String name,@JsonProperty("total") int total, @JsonProperty("employee")boolean isEmployee) {
+    public Person(@JsonProperty("id") UUID id,@JsonProperty("name") String name,@JsonProperty("total") int total, @JsonProperty("isEmployee")boolean isEmployee,@JsonProperty("discount") String discount) {
         this.id = id;
         this.name = name;
         this.total = total;
         this.isEmployee = isEmployee;
+        this.discount=discount;
     }
 
 
@@ -41,14 +43,7 @@ public class Person {
     }
 
     public int setTotal() {
-       if(isEmployee){int h =total/100;
-           int discount = (int) (total*0.3+((total/100) *5));
-          return this.total = (int) (total-discount);
-
-       }else {
-           int discount = (int) (total*0.1+((total/100) *5));
-         return   this.total = (int) (total-discount);
-       }
+       return this.total;
 
     }
 
@@ -58,5 +53,23 @@ public class Person {
 
     public void setEmployee(boolean employee) {
         isEmployee = employee;
+    }
+
+
+    public String setDiscount() {
+        int total =getTotal();
+        int disc =0;
+        if(isEmployee()){
+             disc = (int) (total*0.3+((total/100) *5));
+             total-=disc;
+        }else{
+             disc = (int) (total*0.1+((total/100) *5));
+            total-=disc;
+        }
+      return   this.discount = String.format("you get a $%s".formatted(disc)) + " discount on orders,the total will be $%s".formatted(total);
+    }
+
+    public String getDiscount() {
+        return discount;
     }
 }

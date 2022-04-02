@@ -15,7 +15,7 @@ public class PersonDB implements PersonDeo {
 
     @Override
     public int insertPerson(UUID id, Person person) {
-        DB.add(new Person(id, person.getName(), person.setTotal(),person.isEmployee()));
+        DB.add(new Person(id, person.getName(), person.setTotal(),person.isEmployee(), person.setDiscount()));
         return 1 ;
     }
     @Override
@@ -35,7 +35,7 @@ public class PersonDB implements PersonDeo {
                 .map(person -> {
                     int indexOfPersonToUpdate =DB.indexOf(person);
                     if (indexOfPersonToUpdate>=0){
-                        DB.set(indexOfPersonToUpdate,new Person(id,update.getName(), person.getTotal(),person.isEmployee() ));
+                        DB.set(indexOfPersonToUpdate,new Person(id,update.getName(), person.getTotal(),person.isEmployee(),person.setDiscount() ));
                         return person.getTotal();
 
                     }
