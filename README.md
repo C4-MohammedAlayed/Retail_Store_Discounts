@@ -41,7 +41,7 @@ Post request to http://localhost:8080/api/v1/person
 
 { 
     "name":"mohammed",
-    "total":1500,
+    "total":990,
     "employee":true   
 }
     
