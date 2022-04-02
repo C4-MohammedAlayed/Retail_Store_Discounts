@@ -34,15 +34,15 @@ We will create 2 person one of them is employee
 Post request to http://localhost:8080/api/v1/person
 ```
 { 
-    "name":"omar",
-    "total":990,
-    "employee":false   
-}
-
-{ 
     "name":"mohammed",
     "total":990,
     "employee":true   
+}
+
+{ 
+    "name":"omar",
+    "total":990,
+    "employee":false   
 }
     
 ```
