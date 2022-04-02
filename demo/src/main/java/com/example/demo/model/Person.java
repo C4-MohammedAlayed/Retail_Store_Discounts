@@ -66,7 +66,7 @@ public class Person {
              disc = (int) (total*0.1+((total/100) *5));
             total-=disc;
         }
-      return   this.discount = String.format("you get a $%s".formatted(disc)) + " discount on orders,the total will be $%s".formatted(total);
+      return   this.discount = String.format("you get a $%s".formatted(disc)) + " discount on orders,the net payable amount after discount will be $%s".formatted(total);
     }
 
     public String getDiscount() {
