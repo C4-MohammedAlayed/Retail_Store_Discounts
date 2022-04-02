@@ -1,5 +1,4 @@
 
-
 <p align="center">
   <a href="" rel="noopener">
  
@@ -7,8 +6,6 @@
 <h3 align="center">Retail_Store_Discounts</h3>
 
 ---
-
- 
 
 </p>
 
@@ -49,7 +46,7 @@ Post request to http://localhost:8080/api/v1/person
 ### Step 2
 To see how much discount for each one of them
 Get request to http://localhost:8080/api/v1/person
-the results will be 
+the results will be :
 ```
 [
     {
