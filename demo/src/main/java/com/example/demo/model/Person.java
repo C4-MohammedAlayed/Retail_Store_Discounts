@@ -3,14 +3,14 @@ package com.example.demo.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.UUID;
-
+//create class for Person with 5 properties.
 public class Person {
     private UUID id;
     private String name;
     private int total;
     private boolean isEmployee;
     private String discount ;
-
+// create Person constructor that accept 5 parameters(id,name,total,isEmployee,discount)
     public Person(@JsonProperty("id") UUID id,@JsonProperty("name") String name,@JsonProperty("total") int total, @JsonProperty("isEmployee")boolean isEmployee,@JsonProperty("discount") String discount) {
         this.id = id;
         this.name = name;
@@ -55,7 +55,7 @@ public class Person {
         isEmployee = employee;
     }
 
-
+//function to Calculate the discount and net payable amount.
     public String setDiscount() {
         int total =getTotal();
         int disc =0;

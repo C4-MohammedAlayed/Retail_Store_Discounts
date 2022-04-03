@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+//insertPerson
 public interface PersonDeo {
     int insertPerson(UUID id, Person Person);
     default int insertPerson(Person Person){
@@ -13,7 +14,7 @@ public interface PersonDeo {
         return insertPerson(id,Person);
     }
 
-
+//selectAllPeople
     List<Person> selectAllPeople();
     Optional<Person> selectPersonById(UUID id);
     int updatePersonById(UUID id,Person person);

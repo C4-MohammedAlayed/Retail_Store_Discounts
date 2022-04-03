@@ -19,18 +19,19 @@ public class PersonService {
     }
 
 
-
+//addPerson
     public int addPerson(Person person){
         return personDeo.insertPerson(person);
     }
-
+//getAllPeople
      public List<Person>getAllPeople(){
     return personDeo.selectAllPeople();
      }
-
+//getPersonById
      public Optional<Person>getPersonById(UUID id){
     return personDeo.selectPersonById(id);
      }
+     //updatePerson by id
 public int updatePerson(UUID id, Person newPerson){
     return personDeo.updatePersonById(id,newPerson);
 }

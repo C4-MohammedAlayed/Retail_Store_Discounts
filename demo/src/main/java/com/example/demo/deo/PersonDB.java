@@ -12,7 +12,7 @@ import java.util.UUID;
 public class PersonDB implements PersonDeo {
 
     private static List<Person>DB=new ArrayList<>();
-
+//insertPerson
     @Override
     public int insertPerson(UUID id, Person person) {
         DB.add(new Person(id, person.getName(), person.setTotal(),person.isEmployee(), person.setDiscount()));
@@ -22,13 +22,13 @@ public class PersonDB implements PersonDeo {
    public List<Person>selectAllPeople(){
         return DB;
     }
-
+//selectPersonById
     @Override
     public Optional<Person> selectPersonById(UUID id) {
         return DB.stream().filter(person -> person.getId().equals(id))
                 .findFirst();
     }
-
+//updatePersonById
     @Override
     public int updatePersonById(UUID id, Person update) {
         return selectPersonById(id)

@@ -16,19 +16,23 @@ public class PersonController {
     public PersonController(PersonService personService) {
         this.personService = personService;
     }
+    //addPerson
     @PostMapping
     public void addPerson(@RequestBody Person person){
         personService.addPerson(person);
     }
+    //getAllPeople
     @GetMapping
     public List<Person>getAllPeople(){
         return personService.getAllPeople();
     }
+    //getPersonById
     @GetMapping(path="{id}")
     public  Person getPersonById(@PathVariable("id") UUID id){
     return personService.getPersonById(id)
             .orElse(null);
     }
+    //updatePerson by id
 @PutMapping(path = "{id}")
     public int updatePerson(@PathVariable("id") UUID id, @RequestBody Person personToUpdate) {
         return personService.updatePerson(id,personToUpdate);
